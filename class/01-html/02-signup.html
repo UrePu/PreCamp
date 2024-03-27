@@ -3,28 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>회원가입</title>
+	<link rel="stylesheet" href="/class/02-css/signup.css">
 </head>
 <body>
-    <h1>회원가입</h1>
-		<input type="text" placeholder="이메일을 입력해주세요"><br><br>
-		<input type="text" placeholder="이름을 입력해주세요"><br><br>
-		<input type="password" placeholder="비밀번호를 입력해주세요"><br><br>
-		<input type="password" placeholder="비밀번호를 확인해주세요"><br><br>
-		<br><br>
-		<select>
-			<option disabled="true" selected="true">지역을 선택하세요</option>
-			<option>서울</option>
-			<option>경기</option>
-			<option>인천</option>
-		</select>
-		<br><br>
-		<input type="radio" name="gender"> 여성
-		<input type="radio" name="gender"> 남성
-		<br><br>
-		<input type="checkbox"> 이용약관 어쩌구에 동의합니다.
-		<hr>
-		<button>가입하기</button>
-		<!-- 원래는 이렇게 사용했습니다. -->
-		<!--  <input type="button" value="가입하기"> -->
+	<div class="main__container">
+    <h1 class="header">회원 가입을 위해<br>정보를 입력해주세요</h1>
+		<div class="input__container">
+			<div class="input__container__text">
+				* 이메일
+			</div>
+			<input type="text" class="input__container__input">
+		</div>
+		<div class="input__container">
+			<div class="input__container__text">
+				* 이름
+			</div>
+			<input type="text" class="input__container__input">
+		</div>
+		<div class="input__container">
+			<div class="input__container__text">
+				* 비밀번호
+			</div>
+			<input type="password" class="input__container__input">
+		</div>
+		<div class="input__container">
+			<div class="input__container__text">
+				* 비밀번호 확인
+			</div>
+			<input type="password" class="input__container__input">
+		</div>
+		
+		<div class="radio__container">
+			<div class="radio__container__option">
+				<input type="radio" name="gender">여성
+			</div>
+			<div class="radio__container__option">
+				<input type="radio" name="gender">남성
+			</div>
+		</div>
+		<div class="check__container">
+			<input type="checkbox"> 이용약관 개인정보 수집 및 이용, 마케팅 활용 선택에 모두 동의합니다.
+		</div>
+		<hr/>
+		
+		<button class="signup">가입하기</button>
+	</div>
 </body>
 </html>
