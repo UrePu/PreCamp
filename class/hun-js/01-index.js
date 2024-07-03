@@ -1,1 +1,1 @@
-var inSerts
+var metal =0;
