@@ -1,1 +1,1 @@
-var a = document.querySelector("index")
+var a = document.querySelector("#index")
