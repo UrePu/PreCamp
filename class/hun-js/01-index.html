@@ -6,13 +6,24 @@
     <title>Document</title>
     <script>
         const output = function () {
-            console.log('script 태그 실행?.');
-        }
-        output();
+            console.log('함수 실행.');
+        };
+        const dateFormMaker = function() {
+            const inputYear = document.querySelector('#target-year-input').value;
+            const inputMonth = document.querySelector('#target-month-input').value;
+            const inputDate = document.querySelector('#target-date-input').value;
+            console.log(inputYear, inputMonth, inputDate);
+        };
+        
+
+        
     </script>
 </head>
 <body>
-    <input type="text">
-    <button onclick="console.log('버튼눌림..')">버튼</button>
+    <input id="target-year-input" class="target-input" type="text">
+    <input id="target-month-input" class="targer-input" type="text">
+    <input id="target-date-input" class="targer-input" type="text">
+
+    <button onclick="dateFormMaker()">버튼</button>
 </body>
 </html>
