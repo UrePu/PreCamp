@@ -14,7 +14,14 @@
         
         const counterMaker = function() {
             const nowDate = new Date();
-            console.log(newDate)
+            const targetDate = new Date('2024-08-15');
+            const remaining = (targetDate - nowDate) / 1000
+
+            const remainingDate = Math.floor(remaining / 3600 / 24)
+            const remainingHours = Math.floor(remaining / 3600) % 24
+            const remainingMin = Math.floor(remaining / 60) % 60
+            const remainingSec = Math.floor(remaining) % 60
+            console.log(remainingDate , remainingHours, remainingMin, remainingSec)
         }
         counterMaker();
 
@@ -25,6 +32,6 @@
     <input id="target-month-input" class="targer-input" type="text">
     <input id="target-date-input" class="targer-input" type="text">
 
-    <button onclick="dateFormMaker()">버튼</button>
+    <button onclick="counterMaker()">버튼</button>
 </body>
 </html>
