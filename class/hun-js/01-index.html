@@ -16,6 +16,8 @@
             const nowDate = new Date();
             const targetDate = new Date('2024-08-15');
             const remaining = (targetDate - nowDate) / 1000
+            const dateFormat = inputYear + '-' + inputMonth + '-' + inputDate;
+            console.log(inputYear, inputMonth, inputDate);
 
             const remainingDate = Math.floor(remaining / 3600 / 24) 
             const remainingHours = Math.floor(remaining / 3600) % 24
