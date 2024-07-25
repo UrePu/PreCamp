@@ -17,10 +17,11 @@
             const targetDate = new Date('2024-08-15');
             const remaining = (targetDate - nowDate) / 1000
 
-            const remainingDate = Math.floor(remaining / 3600 / 24)
+            const remainingDate = Math.floor(remaining / 3600 / 24) 
             const remainingHours = Math.floor(remaining / 3600) % 24
             const remainingMin = Math.floor(remaining / 60) % 60
             const remainingSec = Math.floor(remaining) % 60
+            //targetDate - nowDate 의 값을 분류하여 날짜 시간 분 초로 보여지게 함.
             console.log(remainingDate , remainingHours, remainingMin, remainingSec)
         }
         counterMaker();
