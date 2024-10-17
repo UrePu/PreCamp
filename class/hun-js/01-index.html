@@ -7,15 +7,14 @@
     
 </head>
 <body>
-    <input id="target-year-input" class="target-input" type="text" />
-    <input id="target-month-input" class="targer-input" type="text" />
-    <input id="target-date-input" class="targer-input" type="text" />
+    <input id="target-year-input" class="target-input" type="text" value="2024"/>
+    <input id="target-month-input" class="targer-input" type="text" value="11"/>
+    <input id="target-date-input" class="targer-input" type="text" value="1"/>
 
     <button onclick="counterMaker()">버튼</button>
 </body>
 <script>
-    // 스크립트를 아래에 배치해야 본 페이지가 먼저 로딩됨. 이는 불러오기에서도 해당되지않을까 생각.
-    console.log(document.querySelector('#target-year-input'))
+    // 스크립트를 아래에 배치해야 본 페이지가 먼저 로딩됨. 이는 참조에서도 해당되지않을까 생각.
     const dateFormMaker = function() {
         const inputYear = document.querySelector('#target-year-input').value;
         const inputMonth = document.querySelector('#target-month-input').value;
@@ -30,9 +29,11 @@
     
     const counterMaker = function() {
         const targetDateInput = dateFormMaker()
-        console.log(targetDateInput);
         const nowDate = new Date();
-        const targetDate = new Date();
+        console.log(targetDateInput)
+        const targetDate = new Date(targetDateInput).setHours(0,0,0,0);//TargetDate 가 오전 9시로 받아져있으니 .setHours(0,0,0,0)으로 해당 시간을 0시0분0초0ms로 변경해서 자정으로 세팅
+        console.log(nowDate)
+        console.log(targetDate)
         const remaining = (targetDate - nowDate) / 1000
 
         const remainingDate = Math.floor(remaining / 3600 / 24) 
