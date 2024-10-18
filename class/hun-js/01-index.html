@@ -34,6 +34,8 @@
     <button onclick="counterMaker()" id="start-btn">카운트다운 시작</button>
 </body>
 <script>
+  
+    
     // 스크립트를 아래에 배치해야 본 페이지가 먼저 로딩됨. 이는 참조에서도 해당되지않을까 생각.
     const dateFormMaker = function() {
         const inputYear = document.querySelector('#target-year-input').value;
@@ -46,15 +48,25 @@
         
         // console.log(inputYear, inputMonth, inputDate);
     };
-    
+
     const counterMaker = function() {
         const targetDateInput = dateFormMaker()
         const nowDate = new Date();
         // console.log(targetDateInput)
-        const targetDate = new Date(targetDateInput).setHours(0,0,0,0);//TargetDate 가 오전 9시로 받아져있으니 .setHours(0,0,0,0)으로 해당 시간을 0시0분0초0ms로 변경해서 자정으로 세팅
+        const targetDate = new Date(targetDateInput).setHours(0,0,0,0);
+        //TargetDate 가 오전 9시로 받아져있으니 .setHours(0,0,0,0)으로 해당 시간을 0시0분0초0ms로 변경해서 자정으로 세팅
         // console.log(nowDate)
         // console.log(targetDate)
         const remaining = (targetDate - nowDate) / 1000
+        // 만약, remaining 이 0이라면, 타이머가 종료되었습니다. 출력
+        // 수도 코드 작성해보기.. 필?요?
+
+        if(remaining <= 0) {
+            console.log('타이머가 종료되었습니다.');
+        }else if(isNaN(remaining)){
+            //만약, 잘못된 날짜가 들어왔다면, 유효한 시간대가 아닙니다. 출력
+            console.log('유효한 시간대가 아닙니다.')
+        }
 
         const remainingDate = Math.floor(remaining / 3600 / 24) 
         const remainingHours = Math.floor(remaining / 3600) % 24
@@ -65,5 +77,12 @@
     }
     counterMaker();
 
+
 </script>
 </html>
+
+
+<!-- 참조타입은 주소값을 참조하여 복사하는것. 
+ 주소값 하나를 공유하고 그안에 참조하고있는 데이터를 건드는것이기 때문에 둘다 값이 변하게됨.
+  아예 새로운 복사를 하기 위해선 다른 방법이 필요-->
+
