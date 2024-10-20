@@ -14,7 +14,10 @@
     };
 
     const counterMaker = function() {
-        const targetDateInput = dateFormMaker()
+        const messageContainer = document.querySelector("#d-day-message");
+        messageContainer.textContent = 'D-Day를 입력해 주세요.'
+        
+        const targetDateInput = dateFormMaker();
         const nowDate = new Date();
         // console.log(targetDateInput)
         const targetDate = new Date(targetDateInput).setHours(0,0,0,0);
