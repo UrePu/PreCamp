@@ -1,39 +1,3 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-   <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <h1>D-Day</h1>
-    <div id="d-day-container" >
-        <div class="d-day-child-container">
-            <span id="days">0</span>
-            <span>일</span>
-        </div>
-        <div class="d-day-child-container">
-            <span id="hours">0</span>
-            <span>시간</span>
-        </div>
-        <div class="d-day-child-container">
-            <span id="min">0</span>
-            <span>분</span>
-        </div>
-        <div class="d-day-child-container">
-            <span id="sec">0</span>
-            <span>초</span>
-        </div>
-    </div>
-    <div id="target-selector">
-    <input id="target-year-input" class="target-input" type="text" size="5"/>
-    <input id="target-month-input" class="targer-input" type="text" size="5"/>
-    <input id="target-date-input" class="targer-input" type="text" size="5"/>
-    </div>
-    <button onclick="counterMaker()" id="start-btn">카운트다운 시작</button>
-</body>
-<script>
   
     
     // 스크립트를 아래에 배치해야 본 페이지가 먼저 로딩됨. 이는 참조에서도 해당되지않을까 생각.
@@ -76,13 +40,4 @@
         console.log(remainingDate , remainingHours, remainingMin, remainingSec)
     }
     counterMaker();
-
-
-</script>
-</html>
-
-
-<!-- 참조타입은 주소값을 참조하여 복사하는것. 
- 주소값 하나를 공유하고 그안에 참조하고있는 데이터를 건드는것이기 때문에 둘다 값이 변하게됨.
-  아예 새로운 복사를 하기 위해선 다른 방법이 필요 -->
 
