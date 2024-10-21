@@ -1,4 +1,8 @@
   
+    const container = document.querySelector('#d-day-container')
+    const messageContainer = document.querySelector("#d-day-message");
+    container.style.display = 'none'
+    messageContainer.innerHTML = '<h3>D-Day를 입력해 주세요.</h3>'
     
     // 스크립트를 아래에 배치해야 본 페이지가 먼저 로딩됨. 이는 참조에서도 해당되지않을까 생각.
     const dateFormMaker = function() {
@@ -14,11 +18,7 @@
     };
 
     const counterMaker = function() {
-        const container = document.querySelector('#d-day-container')
-        const messageContainer = document.querySelector("#d-day-message");
 
-        container.style.display = 'none'
-        messageContainer.innerHTML = '<h3>D-Day를 입력해 주세요.</h3>'
 
         const targetDateInput = dateFormMaker();
         const nowDate = new Date();
@@ -38,20 +38,33 @@
             messageContainer.style.display = 'flex';
         }
         console.log(remaining)
-        if(remaining == 0) {
-            console.log('타이머가 종료되었습니다.');
-        }else if(isNaN(remaining) || remaining < 0){
+        if(remaining <= 0) {
+            messageContainer.innerHTML = '<h3>타이머가 종료되었습니다.</h3>'
+        }else if(isNaN(remaining)){
             //만약, 잘못된 날짜가 들어왔다면, 유효한 시간대가 아닙니다. 출력
-            console.log('유효한 시간대가 아닙니다.')
-
+            messageContainer.innerHTML = '<h3>유효한 시간대가 아닙니다.</h3>'
         }
+        // const remainingDate = Math.floor(remaining / 3600 / 24); 
+        // const remainingHours = Math.floor(remaining / 3600) % 24
+        // const remainingMin = Math.floor(remaining / 60) % 60
+        // const remainingSec = Math.floor(remaining) % 60
+        //targetDate - nowDate 의 값을 분류하여 날짜 시간 분 초로 보여지게 함   
+        const remainingObj = {
+            remainingDate : Math.floor(remaining / 3600 / 24),
+            remainingHours : Math.floor(remaining / 3600) % 24,
+            remainingMin : Math.floor(remaining / 60) % 60,
+            remainingSec : Math.floor(remaining) % 60
+        }    
 
-        const remainingDate = Math.floor(remaining / 3600 / 24) 
-        const remainingHours = Math.floor(remaining / 3600) % 24
-        const remainingMin = Math.floor(remaining / 60) % 60
-        const remainingSec = Math.floor(remaining) % 60
-        //targetDate - nowDate 의 값을 분류하여 날짜 시간 분 초로 보여지게 함       
-        console.log(remainingDate , remainingHours, remainingMin, remainingSec)
+        const days = document.getElementById('days');
+        const hours = document.getElementById('hours');
+        const min = document.getElementById('min');
+        const sec = document.getElementById('sec');
+
+        days.innerHTML = remainingDate;
+        hours.innerHTML = remainingHours;
+        min.innerHTML = remainingMin;
+        sec.innerHTML = remainingSec;
+        // console.log(remainingDate , remainingHours, remainingMin, remainingSec)
     }
-    counterMaker();
 
