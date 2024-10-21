@@ -56,15 +56,22 @@
             remainingSec : Math.floor(remaining) % 60
         }    
 
-        const days = document.getElementById('days');
-        const hours = document.getElementById('hours');
-        const min = document.getElementById('min');
-        const sec = document.getElementById('sec');
+        // const days = document.getElementById('days')
+        // const hours = document.getElementById('hours')
+        // const min = document.getElementById('min')
+        // const sec = document.getElementById('sec')
 
-        days.innerHTML = remainingDate;
-        hours.innerHTML = remainingHours;
-        min.innerHTML = remainingMin;
-        sec.innerHTML = remainingSec;
+        const documentObj = {
+           days : document.getElementById('days'),
+           hours : document.getElementById('hours'),
+           min : document.getElementById('min'),
+           sec : document.getElementById('sec')
+        }
+
+        documentObj[days] = remainingObj,['remainingDate']
+        documentObj[hours] = remainingObj,['remainingHours']
+        documentObj[min] = remainingObj,['remainingMin']
+        documentObj[sec] = remainingObj,['remainingSec']
         // console.log(remainingDate , remainingHours, remainingMin, remainingSec)
     }
 
