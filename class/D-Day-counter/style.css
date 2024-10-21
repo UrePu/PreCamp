@@ -34,3 +34,6 @@ h1 {
 .target-selector{
     margin-top: 0.5rem;
 }
+#d-day-message {
+    color: red;
+}

@@ -14,9 +14,12 @@
     };
 
     const counterMaker = function() {
+        const container = document.querySelector('#d-day-container')
         const messageContainer = document.querySelector("#d-day-message");
+
+        container.style.display = 'none'
         messageContainer.textContent = 'D-Day를 입력해 주세요.'
-        
+
         const targetDateInput = dateFormMaker();
         const nowDate = new Date();
         // console.log(targetDateInput)
@@ -27,12 +30,20 @@
         const remaining = (targetDate - nowDate) / 1000
         // 만약, remaining 이 0이라면, 타이머가 종료되었습니다. 출력
         // 수도 코드 작성해보기.. 필?요?
-
-        if(remaining <= 0) {
+        if(!isNaN(targetDate) && !isNaN(remaining)){
+            container.style.display = 'flex';
+            messageContainer.style.display = 'none';
+        }else{
+            container.style.display = 'none'
+            messageContainer.style.display = 'flex';
+        }
+        console.log(remaining)
+        if(remaining == 0) {
             console.log('타이머가 종료되었습니다.');
-        }else if(isNaN(remaining)){
+        }else if(isNaN(remaining) || remaining < 0){
             //만약, 잘못된 날짜가 들어왔다면, 유효한 시간대가 아닙니다. 출력
             console.log('유효한 시간대가 아닙니다.')
+            
         }
 
         const remainingDate = Math.floor(remaining / 3600 / 24) 
