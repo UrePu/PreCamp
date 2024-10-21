@@ -18,7 +18,7 @@
         const messageContainer = document.querySelector("#d-day-message");
 
         container.style.display = 'none'
-        messageContainer.textContent = 'D-Day를 입력해 주세요.'
+        messageContainer.innerHTML = '<h3>D-Day를 입력해 주세요.</h3>'
 
         const targetDateInput = dateFormMaker();
         const nowDate = new Date();
@@ -43,7 +43,7 @@
         }else if(isNaN(remaining) || remaining < 0){
             //만약, 잘못된 날짜가 들어왔다면, 유효한 시간대가 아닙니다. 출력
             console.log('유효한 시간대가 아닙니다.')
-            
+
         }
 
         const remainingDate = Math.floor(remaining / 3600 / 24) 
