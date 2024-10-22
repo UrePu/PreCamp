@@ -77,6 +77,10 @@
             documentObj[docKeys[i]].textContent = remainingObj[timeKeys[i]];
         }
 
+        for(let key in documentObj){
+            console.log(documentObj[key],key);
+            
+        }
         // documentObj[days] = remainingObj,['remainingDate']
         // documentObj[hours] = remainingObj,['remainingHours']
         // documentObj[min] = remainingObj,['remainingMin']
