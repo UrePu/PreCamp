@@ -68,10 +68,19 @@
            sec : document.getElementById('sec')
         }
 
-        documentObj[days] = remainingObj,['remainingDate']
-        documentObj[hours] = remainingObj,['remainingHours']
-        documentObj[min] = remainingObj,['remainingMin']
-        documentObj[sec] = remainingObj,['remainingSec']
+        const timeKeys = Object.keys(remainingObj);
+        const docKeys = Object.keys(documentObj);
+        console.log(timeKeys, docKeys);
+        
+        for (let i = 0 ; i < timeKeys.length; i = i + 1){
+            // console.log(documentObj[docKeys[i]]);
+            documentObj[docKeys[i]].textContent = remainingObj[timeKeys[i]];
+        }
+
+        // documentObj[days] = remainingObj,['remainingDate']
+        // documentObj[hours] = remainingObj,['remainingHours']
+        // documentObj[min] = remainingObj,['remainingMin']
+        // documentObj[sec] = remainingObj,['remainingSec']
         // console.log(remainingDate , remainingHours, remainingMin, remainingSec)
     }
 
