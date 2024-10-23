@@ -78,7 +78,7 @@
         }
 
         for(let key in documentObj){
-            console.log(documentObj[key],key);
+            console.log(documentObj[key],key)
             
         }
         // documentObj[days] = remainingObj,['remainingDate']
