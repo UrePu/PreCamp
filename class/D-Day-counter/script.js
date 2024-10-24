@@ -61,6 +61,10 @@
         // const min = document.getElementById('min')
         // const sec = document.getElementById('sec')
 
+        const timeKeys = Object.keys(remainingObj);
+        const documentArr = ['days', 'hours', 'min', 'sec'];
+
+
         const documentObj = {
            days : document.getElementById('days'),
            hours : document.getElementById('hours'),
@@ -68,18 +72,18 @@
            sec : document.getElementById('sec')
         }
 
-        const timeKeys = Object.keys(remainingObj);
-        const docKeys = Object.keys(documentObj);
-        console.log(timeKeys, docKeys);
+        
+                
         
         for (let i = 0 ; i < timeKeys.length; i = i + 1){
             // console.log(documentObj[docKeys[i]]);
             documentObj[docKeys[i]].textContent = remainingObj[timeKeys[i]];
         }
-
+        let i = 0;
         for(let key in documentObj){
-            console.log(documentObj[key],key)
-            
+            documentObj[key].textContent = remainingObj[timeKeys[i]]
+            //i = i + i
+            i++
         }
         // documentObj[days] = remainingObj,['remainingDate']
         // documentObj[hours] = remainingObj,['remainingHours']
