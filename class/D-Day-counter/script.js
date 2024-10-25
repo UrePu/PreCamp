@@ -65,11 +65,13 @@
         const documentArr = ['days', 'hours', 'min', 'sec'];
 
 
-        const documentObj = {
+        const documentObj = { 
+
            days : document.getElementById('days'),
            hours : document.getElementById('hours'),
            min : document.getElementById('min'),
            sec : document.getElementById('sec')
+           
         }
 
         
