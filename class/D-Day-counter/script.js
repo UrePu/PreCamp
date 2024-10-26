@@ -71,13 +71,13 @@
            hours : document.getElementById('hours'),
            min : document.getElementById('min'),
            sec : document.getElementById('sec')
-           
         }
 
         
                 
         
         for (let i = 0 ; i < timeKeys.length; i = i + 1){
+            
             // console.log(documentObj[docKeys[i]]);
             documentObj[docKeys[i]].textContent = remainingObj[timeKeys[i]];
         }
