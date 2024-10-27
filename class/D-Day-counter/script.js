@@ -62,7 +62,7 @@
         // const sec = document.getElementById('sec')
 
         const timeKeys = Object.keys(remainingObj);
-        const documentArr = ['days', 'hours', 'min', 'sec'];
+        const documentArr = ['days', 'hours', 'min', 'sec']
 
 
         const documentObj = { 
