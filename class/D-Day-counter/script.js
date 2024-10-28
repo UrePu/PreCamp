@@ -85,7 +85,7 @@
         for(let key in documentObj){
             documentObj[key].textContent = remainingObj[timeKeys[i]]
             //i = i + i
-            i++
+            i++;
         }
         // documentObj[days] = remainingObj,['remainingDate']
         // documentObj[hours] = remainingObj,['remainingHours']
