@@ -91,6 +91,6 @@
         // documentObj[hours] = remainingObj,['remainingHours']
         // documentObj[min] = remainingObj,['remainingMin']
         // documentObj[sec] = remainingObj,['remainingSec']
-        // console.log(remainingDate , remainingHours, remainingMin, remainingSec)
+        // console.log(remainingDate , remainingHours, remainingMin, remainingSec);
     }
 
