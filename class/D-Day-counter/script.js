@@ -87,6 +87,7 @@
             //i = i + i
             i++;
         }
+        
         // documentObj[days] = remainingObj,['remainingDate']
         // documentObj[hours] = remainingObj,['remainingHours']
         // documentObj[min] = remainingObj,['remainingMin']
