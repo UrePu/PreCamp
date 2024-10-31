@@ -16,12 +16,9 @@
         
     };
 
-    const counterMaker = function() {
-        const targetDateInput = dateFormMaker();
+    const counterMaker = function(data) {
         const nowDate = new Date();
-        const targetDate = new Date(targetDateInput).setHours(0,0,0,0);
-        //TargetDate 가 오전 9시로 받아져있으니 .setHours(0,0,0,0)으로 해당 시간을 0시0분0초0ms로 변경해서 자정으로 세팅
-
+        const targetDate = new Date(data).setHours(0,0,0,0);
         const remaining = (targetDate - nowDate) / 1000
         // 만약, remaining 이 0이라면, 타이머가 종료되었습니다. 출력
         // 수도 코드 작성해보기.. 필?요?
@@ -59,10 +56,12 @@
     const intervalIdArr =[]
     const starter = function () {
         setClearInterval();
+        const targetDateInput = dateFormMaker();
+        //TargetDate 가 오전 9시로 받아져있으니 .setHours(0,0,0,0)으로 해당 시간을 0시0분0초0ms로 변경해서 자정으로 세팅
         container.style.display='flex';
         messageContainer.style.display = 'none'
-        counterMaker();
-        const intervalId = setInterval(counterMaker,1000);
+        counterMaker(targetDateInput);
+        const intervalId = setInterval(() => counterMaker(targetDateInput),1000);
         intervalIdArr.push(intervalId);
     }
 
