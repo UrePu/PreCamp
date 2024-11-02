@@ -45,9 +45,18 @@
 
         const timeKeys = Object.keys(remainingObj);
         const documentArr = ['days', 'hours', 'min', 'sec']
+
+        const format = function(time) {
+            if(time < 10){
+                return '0' + time;
+            }else return time;
+        }
+
         let i = 0;
         for (let tag of documentArr){
-            document.getElementById(tag).innerHTML = remainingObj[timeKeys[i]]; 
+            const remainingTime = format(remainingObj[timeKeys[i]])
+
+            document.getElementById(tag).innerHTML = remainingTime;
             i++
         };
 
