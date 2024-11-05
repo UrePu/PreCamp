@@ -3,6 +3,9 @@
     const messageContainer = document.querySelector("#d-day-message");
     container.style.display = 'none'
     messageContainer.innerHTML = '<h3>D-Day를 입력해 주세요.</h3>'
+    const savedDate = localStorage.getItem('saved-date');
+
+   
     
     // 스크립트를 아래에 배치해야 본 페이지가 먼저 로딩됨. 이는 참조에서도 해당되지않을까 생각.
     const dateFormMaker = function() {
@@ -17,6 +20,9 @@
     };
 
     const counterMaker = function(data) {
+        if(data !== savedDate) {
+            localStorage.setItem('saved-date', targetDateInput)
+        }
         const nowDate = new Date();
         const targetDate = new Date(data).setHours(0,0,0,0);
         const remaining = (targetDate - nowDate) / 1000
@@ -63,9 +69,13 @@
     };
 
     const intervalIdArr =[]
-    const starter = function () {
+    const starter = function (targetDateInput) {
+        if(!targetDateInput){
+            targetDateInput = dateFormMaker();
+        }
+
         setClearInterval();
-        const targetDateInput = dateFormMaker();
+        counterMaker(targetDateInput)
         //TargetDate 가 오전 9시로 받아져있으니 .setHours(0,0,0,0)으로 해당 시간을 0시0분0초0ms로 변경해서 자정으로 세팅
         container.style.display='flex';
         messageContainer.style.display = 'none'
@@ -75,6 +85,7 @@
     }
 
     const setClearInterval = function () {
+        localStorage.removeItem('saved-date')
         for(let i = 0; i < intervalIdArr.length; i++){
             clearInterval(intervalIdArr[i]);
         }
@@ -85,4 +96,12 @@
         messageContainer.style.display = 'flex'
         messageContainer.innerHTML = '<h3>D-Day를 입력해 주세요.</h3>'
         setClearInterval();
+    } 
+    
+    if(savedDate){
+        starter(savedDate)  
+    }else {
+        container.style.display = 'none'
+        messageContainer.style.display = 'flex'
+        messageContainer.innerHTML = '<h3>D-Day를 입력해 주세요.</h3>'
     }
