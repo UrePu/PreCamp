@@ -1,4 +1,11 @@
-var todoList = document.querySelector('#todo-list')
+var todoList;
+
+console.log(todoList);
+
+
+
+
+todoList = document.querySelector('#todo-list')
 var todoInput = document.querySelector('#todo-input');
 console.log(todoInput);
 
